@@ -5,8 +5,8 @@ class Pokemon extends Component {
     render() {
         return (
             <div className='Pokemon'>
-                <figure className='Pokemon-img'>
-                    <img src='https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png'></img>
+                <figure className='Pokemon-img-figure'>
+                    <img className='Pokemon-img' src='https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png'></img>
                 </figure>
                 <h5>Index</h5>
                 <h1>Bulbasaur</h1>
