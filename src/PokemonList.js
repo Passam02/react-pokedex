@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import Pokemon from './Pokemon'
 import axios from 'axios'
+import './PokemonList.css'
 
 class PokemonList extends Component {
     state = {
-        Pokemons: []
+        Pokemons: [],
     }
     componentDidMount() {
         axios.get('https://pokeapi.co/api/v2/pokemon/').then(response => {
@@ -16,12 +17,11 @@ class PokemonList extends Component {
         return(
             <div>
                 <h1>Pokemon List</h1>
-                <div>
-                    {this.state.Pokemons.map(() => (
-                    <Pokemon/>  
-                        ))}
+                <div className='PokemonList-pokemons'>
+                    {this.state.Pokemons.map((p) => (
+                        <Pokemon obj={p.url}/>  
+                    ))}
                 </div>
-                <Pokemon />
             </div>
         )
     }
