@@ -9,12 +9,11 @@ class PokemonList extends Component {
         Pokemons: [],
     }
     componentDidMount() {
-        axios.get('https://pokeapi.co/api/v2/pokemon/').then(response => {
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0').then(response => {
             this.setState({Pokemons: response.data.results})})
     }
         
     render(){
-        console.log(this.state.Pokemons)
         return(
             <div className='d-flex justify-content-center'>
                 <div className='PokemonList'>

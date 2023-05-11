@@ -3,7 +3,12 @@ import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Pokemon.css'
 
-let padToThree = (num) => (`00${num}`.slice(-3))
+let padToThree = (num) => {
+    if (num > 999) {
+        return num
+    }
+    return `00${num}`.slice(-3)
+    }
 
 class Pokemon extends Component {
     state = {
@@ -15,7 +20,6 @@ class Pokemon extends Component {
         let types = []
         axios.get(this.props.obj).then(response => {
             this.setState({info: response.data})
-            console.log(response.data.sprites.front_default)
             this.setState({img: response.data.sprites.front_default})
             response.data.types.map(t => {
                 types.push(t.type.name)})
