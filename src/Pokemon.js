@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Pokemon.css'
 
 let padToThree = (num) => (`00${num}`.slice(-3))
@@ -20,17 +21,19 @@ class Pokemon extends Component {
                 types.push(t.type.name)})
             })
         this.setState({types: types})
-        }                               // fix types, either fix api specific for types or learn how to move in objects / OR be a lazy fuc and add all types manually in another file
+        }                               
     render() {
         return (
-            <div className='Pokemon'>
-                <figure className='Pokemon-img-figure'>
-                    <img className='Pokemon-img' src={`${this.state.img}`}></img>
-                </figure>
-                <h5>#{padToThree(this.state.info.id)}</h5>
-                <h1>{this.state.info.name}</h1>
-                <h4>{`${this.state.types}`}
-                </h4>
+            <div>
+                <div className='Pokemon card'>
+                    <figure className='Pokemon-img-figure'>
+                        <img className='Pokemon-img' alt={this.state.info.name} src={`${this.state.img}`}></img>
+                    </figure>
+                    <h5>#{padToThree(this.state.info.id)}</h5>
+                    <h1>{this.state.info.name}</h1>
+                    <h4>{`${this.state.types}`}
+                    </h4>
+                </div>
             </div>
         )
     } 
