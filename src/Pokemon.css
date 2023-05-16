@@ -6,10 +6,12 @@
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
+    height: inherit;
 }
 
 .Pokemon-img-figure {
     width: 85%;
+    height: 50%;
     background: rgb(215, 226, 226);
     margin-top: 1em;
     border-radius: 10px;
@@ -19,4 +21,18 @@
 
 .Pokemon-img {
     overflow: auto;
+}
+.Pokemon-card {
+    height: 400px;
+}
+.Pokemon-types-box {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+}
+.Pokemon-type {
+    width: 45%;
+    padding: 2px;
+    border-radius: 10px;
 }
