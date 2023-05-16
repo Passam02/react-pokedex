@@ -99,7 +99,9 @@ class Pokemon extends Component {
                         <img className='Pokemon-img' alt={this.state.info.name} src={`${this.state.img}`}></img>
                     </figure>
                     <h5>#{padToThree(this.state.info.id)}</h5>
-                    <h1 style={{lineHeight: '0.9em'}}>{this.state.info.name}</h1>
+                    <div style={{height: '72px'}}>
+                    <h1 style={{fontSize: '2vw'}}>{this.state.info.name}</h1>
+                    </div>
                     <div className={`Pokemon-types-box ${this.state.types.length > 1 ? 'justify-content-between' : 'justify-content-center'}`}>
                         {this.state.types.map(t => {
                             return <h4 className='Pokemon-type' style={{background: this.props.pokemonTypes[t].color}}>{t}</h4>
