@@ -19,6 +19,7 @@ class Pokemon extends Component {
         img: [],
     }
     static defaultProps = {
+        missingImages: [1009,1010,10128,10129,10146,10153,10154,10158,10159,10160,10181,10182,10183,10187,10192,10264,10265,10266,10267,10268,10269,10270,10271],
         pokemonTypes: {
             grass: {
                 color: 'rgb(0, 179, 0)'
@@ -88,8 +89,9 @@ class Pokemon extends Component {
         this.setState({types: types})
         }                               
     render() {
-        let n  = 'grass'
-        console.log(this.props.pokemonTypes[n].color)
+        if (this.props.missingImages.includes(this.state.info.id)) {
+            return null
+        }
         return (
             <div className='Pokemon-card'>
                 <div className='Pokemon card'>
@@ -97,8 +99,7 @@ class Pokemon extends Component {
                         <img className='Pokemon-img' alt={this.state.info.name} src={`${this.state.img}`}></img>
                     </figure>
                     <h5>#{padToThree(this.state.info.id)}</h5>
-                        <h1>{this.state.info.name}</h1>
-        
+                    <h1 style={{lineHeight: '0.9em'}}>{this.state.info.name}</h1>
                     <div className={`Pokemon-types-box ${this.state.types.length > 1 ? 'justify-content-between' : 'justify-content-center'}`}>
                         {this.state.types.map(t => {
                             return <h4 className='Pokemon-type' style={{background: this.props.pokemonTypes[t].color}}>{t}</h4>

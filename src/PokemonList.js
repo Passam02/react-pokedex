@@ -4,14 +4,12 @@ import Pokemon from './Pokemon'
 import axios from 'axios'
 import './PokemonList.css'
 
-// ?limit=100000&offset=0
-
 class PokemonList extends Component {
     state = {
         Pokemons: [],
     }
     componentDidMount() {
-        axios.get('https://pokeapi.co/api/v2/pokemon').then(response => {
+        axios.get('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0').then(response => {
             this.setState({Pokemons: response.data.results})})
     }
         
