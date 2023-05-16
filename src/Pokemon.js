@@ -8,10 +8,10 @@ let padToThree = (num) => {
         return num
     }
     return `00${num}`.slice(-3)
-    }
-                                    //  pokemons: 1009, 1010, 10128, 10129, 10146, 10153, 10154, 10158, 10159, 10160, 10181, 10182, 10183, 10187, 10192 and from 10264 to 10271 
-                                    //  dont have image, either find it online and add manually or not render them with if
-                                    // change pokemon cards so they are displayed as 2 divs, one with image, second one with the rest, to fix images being smaller with 2 liner names
+}
+
+//                                   fix text being too big on full screen
+
 class Pokemon extends Component {
     state = {
         info: [],
@@ -100,7 +100,7 @@ class Pokemon extends Component {
                     </figure>
                     <h5>#{padToThree(this.state.info.id)}</h5>
                     <div style={{height: '72px'}}>
-                    <h1 style={{fontSize: '2vw'}}>{this.state.info.name}</h1>
+                    <h1 className='Pokemon-name'>{this.state.info.name}</h1>
                     </div>
                     <div className={`Pokemon-types-box ${this.state.types.length > 1 ? 'justify-content-between' : 'justify-content-center'}`}>
                         {this.state.types.map(t => {

@@ -10,8 +10,8 @@
 }
 
 .Pokemon-img-figure {
-    width: 200px;
-    height: 200px;
+    width: 85%;
+    min-height: 200px;
     background: rgb(215, 226, 226);
     margin-top: 1em;
     border-radius: 10px;
@@ -21,7 +21,7 @@
 
 .Pokemon-img {
     overflow: auto;
-    width: 200px;
+    min-width: 200px;
 }
 .Pokemon-card {
     height: 400px;
@@ -36,4 +36,9 @@
     width: 45%;
     padding: 2px;
     border-radius: 10px;
+}
+
+.Pokemon-name {
+    line-height: 1em;
+    font-size: 2vw;
 }
