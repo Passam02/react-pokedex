@@ -2,7 +2,7 @@ import { React, useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import axios from 'axios'
 import './PokemonPage.css'
-import { Paper } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 
 let padToThree = (num) => {
     if (num > 999) {
@@ -58,7 +58,7 @@ function PokemonPage() {
             <Paper style={{width: '80%'}}>
                 <h1>{allData.pokemon.name} #{padToThree(pokemon)}</h1>
                 <img className='PokemonPage-img' alt={allData.pokemon.name} src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${padToThree(pokemon)}.png`}></img>
-                <p>{allData.pokemonSpecies === '' ? ('') : allData.pokemonSpecies.flavor_text_entries[2].flavor_text}</p>
+                <Typography>{allData.pokemonSpecies === '' ? ('') : allData.pokemonSpecies.flavor_text_entries[2].flavor_text}</Typography>
             </Paper>
         </div>
     )

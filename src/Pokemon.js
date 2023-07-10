@@ -95,7 +95,7 @@ class Pokemon extends Component {
                 <div className='Pokemon-card'>
                     <div className='Pokemon card'>
                         <figure className='Pokemon-img-figure'>
-                            <img className='Pokemon-img' alt={this.state.info.name} src={`${this.state.img}`}></img>
+                            <img className='Pokemon-img' alt={this.state.info.name} src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${padToThree(this.state.info.id)}.png`}></img>
                         </figure>
                         <h5>#{padToThree(this.state.info.id)}</h5>
                         <div style={{height: '72px'}}>
