@@ -10,8 +10,6 @@ let padToThree = (num) => {
     return `00${num}`.slice(-3)
 }
 
-//                                   fix text being too big on full screen
-
 class Pokemon extends Component {
     state = {
         info: [],
@@ -93,22 +91,24 @@ class Pokemon extends Component {
             return null
         }
         return (
-            <div className='Pokemon-card'>
-                <div className='Pokemon card'>
-                    <figure className='Pokemon-img-figure'>
-                        <img className='Pokemon-img' alt={this.state.info.name} src={`${this.state.img}`}></img>
-                    </figure>
-                    <h5>#{padToThree(this.state.info.id)}</h5>
-                    <div style={{height: '72px'}}>
-                    <h1 className='Pokemon-name'>{this.state.info.name}</h1>
-                    </div>
-                    <div className={`Pokemon-types-box ${this.state.types.length > 1 ? 'justify-content-between' : 'justify-content-center'}`}>
-                        {this.state.types.map(t => {
-                            return <h4 className='Pokemon-type' style={{background: this.props.pokemonTypes[t].color}}>{t}</h4>
-                        })}
+            <a href={`/${this.state.info.id}`} className='Pokemon-a'>
+                <div className='Pokemon-card'>
+                    <div className='Pokemon card'>
+                        <figure className='Pokemon-img-figure'>
+                            <img className='Pokemon-img' alt={this.state.info.name} src={`${this.state.img}`}></img>
+                        </figure>
+                        <h5>#{padToThree(this.state.info.id)}</h5>
+                        <div style={{height: '72px'}}>
+                        <h1 className='Pokemon-name'>{this.state.info.name}</h1>
+                        </div>
+                        <div className={`Pokemon-types-box ${this.state.types.length > 1 ? 'justify-content-between' : 'justify-content-center'}`}>
+                            {this.state.types.map(t => {
+                                return <h4 className='Pokemon-type' style={{background: this.props.pokemonTypes[t].color}}>{t.toUpperCase()}</h4>
+                            })}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         )
     } 
 }

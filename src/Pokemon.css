@@ -36,9 +36,16 @@
     width: 45%;
     padding: 2px;
     border-radius: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 19px;
 }
 
 .Pokemon-name {
     line-height: 1em;
-    font-size: 2vw;
+    /* font-size: 2vw; */
+}
+
+.Pokemon-a {
+    text-decoration: none;
 }
